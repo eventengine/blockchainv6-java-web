@@ -1,0 +1,45 @@
+<header style="background-color:#edf8fe" ng-controller="MenuCtrl" >
+	<nav class="navbar navbar-default"  >
+		
+		<div  ng-if="!user" style="color:#FFFFFF;text-align: center;">
+			<h4 >Web application supporting Hyperledger Fabric v0.6</h4>
+		</div>
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-show="user" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div ng-if="user">
+			<span ng-if="user.role=='USER' " style="color:#FFFFFF;text-align: center;padding-top:-15px;">
+				<img  class="app-logo" alt="" src="images/logo.png" />
+			 	<span style="word-wrap: break-word;">Frequent Flyer Rewards Management</span>
+			</span>
+			<span ng-if="user.role=='AIR_LINES' " style="color:#FFFFFF;text-align: center;padding-top:-15px;">
+				<img  class="app-logo" alt="" src="images/airlines.png" />
+			 	<span style="word-wrap: break-word;">Flight Booking</span>
+			</span>
+			<span ng-if="user.role=='HOTEL' " style="color:#FFFFFF;text-align: center;padding-top:-15px;">
+				<img  class="app-logo" alt="" src="images/hotel.png" />
+			 	<span style="word-wrap: break-word;">Hotel Booking</span>
+			</span>
+			</div>
+		</div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed" >
+		<ul class="nav navbar-nav navbar-right" ng-show="login">
+			<li ng-if="user.role=='USER' "><a  href='#/end-user-home'>Home</a></li>
+			<li ng-if="user.role=='AIR_LINES' "><a  href='#/airlines-user-home'>Home</a></li>
+			<li ng-if="user.role=='HOTEL' "><a  href='#/hotel-end-user-home'>Home</a></li>
+			
+			<li uib-dropdown on-toggle="toggled(open)">
+				<a id="userDropdown" uib-dropdown-toggle>
+        				Welcome {{user.userId}}!!<span class="caret"></span>
+      			</a>
+      			<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="userDropdown">
+      				<li><a href="#/logout">Logout</a></li>
+      			</ul>
+			</li>
+		</ul>	
+		</div>
+	</nav>
+</header>

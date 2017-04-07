@@ -1,0 +1,60 @@
+
+<div ng-controller="LoginCtrl" class="col-md-offset-3 col-md-6 ">
+	<show-progress></show-progress>
+	<div class="panel panel-primary col-md-12 panel-shadow">
+		<div class="panel-heading col-md-12 form-header">Application Login</div>
+		<div class="panel-body">
+			<div class="clearfix visible-md visible-lg">&nbsp;</div>
+			<form ng-submit="login_check()" name="loginFrm">
+				<div class="form-group row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<input type="text" name="uid" class="form-control"
+							id="lgFormGroupInput" placeholder="User name" ng-model="user.userId"
+							required >
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<input type="password" class="form-control" id="smFormGroupInput"
+							name="password" placeholder="Enter your password"
+							ng-model="user.pwd" required >
+					</div>
+				</div>
+				<div class="form-group row">
+					
+					<div class="col-xs-12 col-xs-offset-1 col-sm-2 col-sm-offset-0 col-md-offset-0 col-md-4 col-lg-offset-0 col-lg-4"><strong>Select Site</strong></div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      						<div class="row col-xs-offset-1 col-sm-offset-2">
+      							<input type="radio" id="ff" name="user.userRole" ng-model="user.role" value="BE_1" />&nbsp;<label for="ff">Business entity 1</label>
+      						</div>
+      						<div class="row col-xs-offset-1 col-sm-offset-2">
+      							<input type="radio" id="al" name="user.userRole" ng-model="user.role" value="BE_2"  />&nbsp;<label for="al" >Business entity 2</label>
+      						</div>
+      						<div class="row col-xs-offset-1 col-sm-offset-2">
+      							<input type="radio" id="ht" name="user.userRole" ng-model="user.role" value="BE_3"  />&nbsp;<label for="ht">Business entity 3</label>
+      						</div>
+      						<div class="row col-xs-offset-1 col-sm-offset-2">
+      							<input type="radio" id="bv" name="user.userRole" ng-model="user.role" value="ADMIN"  />&nbsp;<label for="ht">Admin</label>
+      							
+      						</div>
+    				</div>
+					
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 ">
+						<input type="submit" name="button" value="Login"
+							class="btn-shadow btn btn-primary col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" ng-disabled="loginFrm.uid.$invalid ||loginFrm.password.$invalid"></input>
+					</div>
+					<div class="clearfix visible-xs">&nbsp;</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 ">
+						<input type="button" name="a" value="Sign Up"
+							class="btn-shadow btn btn-danger col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" ng-click="regsiter()"></input>
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</div>
+<!--end of login screen-->
+</center>
